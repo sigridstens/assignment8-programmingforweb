@@ -20,9 +20,11 @@ var churchillSpeech = {
     speechesArray = [churchillSpeech, ghandiSpeech, demosthenesSpeech],
     donatePrompt;
 
-function getAuthorAndYearString(speechElement) {
-    ('ConsoleDisplay').innerHTML = 'This speech was written by ' + speechesArray[speechElement].author + ' in ' + speechesArray[speechElement].year + '<br>';
+function getAuthorAndYearString(speechElementNum) {
+    return document.getElementById("ConsoleDisplay").innerHTML = 'This speech was written by ' + speechesArray[speechElementNum].author + ' in ' + speechesArray[speechElementNum].year + '<br><br>';
 }
+
+
 
 document.getElementById('BtnDonate').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Donate" button.
@@ -110,7 +112,7 @@ document.getElementById('BtnGhandi').addEventListener('click', function(){
 
 document.getElementById('BtnDemosthenes').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Demosthenes" button.
-    getAuthorAndYearString(0);
+    getAuthorAndYearString(2);
 
     if(speechesArray[2].yearIsBCE === true){
     document.getElementById('ConsoleDisplay').innerHTML += 'This speech took place before the common era.<br>';
