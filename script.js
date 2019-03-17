@@ -20,6 +20,10 @@ var churchillSpeech = {
     speechesArray = [churchillSpeech, ghandiSpeech, demosthenesSpeech],
     donatePrompt;
 
+function getAuthorAndYearString(speechElement) {
+    ('ConsoleDisplay').innerHTML = 'This speech was written by ' + speechesArray[speechElement].author + ' in ' + speechesArray[speechElement].year + '<br>';
+}
+
 document.getElementById('BtnDonate').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Donate" button.
   var donationDisplay = document.createElement('h3'),
@@ -46,7 +50,7 @@ document.getElementById('BtnDonate').addEventListener('click', function(){
 
 document.getElementById('BtnChurchill').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Churchill" button.
-  document.getElementById('ConsoleDisplay').innerHTML = 'This speech was written by ' + speechesArray[0].author + ' in ' + speechesArray[0].year + '<br>';
+    getAuthorAndYearString(0);
 
   if(speechesArray[0].yearIsBCE === true){
     document.getElementById('ConsoleDisplay').innerHTML += 'This speech took place before the common era.<br>';
@@ -76,7 +80,7 @@ document.getElementById('BtnChurchill').addEventListener('click', function(){
 
 document.getElementById('BtnGhandi').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Ghandi" button.
-  document.getElementById('ConsoleDisplay').innerHTML = 'This speech was written by ' + speechesArray[1].author + ' in ' + speechesArray[1].year + '<br>';
+    getAuthorAndYearString(1);
 
   if(speechesArray[1].yearIsBCE === true){
     document.getElementById('ConsoleDisplay').innerHTML += 'This speech took place before the common era.<br>';
@@ -106,10 +110,9 @@ document.getElementById('BtnGhandi').addEventListener('click', function(){
 
 document.getElementById('BtnDemosthenes').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Demosthenes" button.
-  document.getElementById('ConsoleDisplay').innerHTML = 'This speech was written by ' + speechesArray[2].author + ' in ' + speechesArray[2].year + '<br>';
+    getAuthorAndYearString(0);
 
-
-  if(speechesArray[2].yearIsBCE === true){
+    if(speechesArray[2].yearIsBCE === true){
     document.getElementById('ConsoleDisplay').innerHTML += 'This speech took place before the common era.<br>';
   }else{
     document.getElementById('ConsoleDisplay').innerHTML += 'This speech took place during the common era.<br>';
